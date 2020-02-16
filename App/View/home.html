@@ -1,0 +1,7 @@
+<section>
+    {% for postagem in postagens %}
+    <h2><a href="http://portfolio/MVC/?pagina=post&id={{postagem.id}}">{{postagem.titulo}}</a></h2>
+    <p>{{postagem.conteudo}}</p>
+    <br><br><hr>
+    {% endfor %}
+</section>

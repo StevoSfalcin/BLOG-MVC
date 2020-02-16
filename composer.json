@@ -1,0 +1,22 @@
+{
+    "description": "Blog-Mvc",
+    "minimum-stability": "dev",
+    "license": "MIT",
+
+    "authors": [{
+        "name": "Stevo Sfalcin",
+        "email": "stevosfalcin@gmail.com"
+    }],
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+
+    "require": {
+        "twig/twig": "3.0.*"
+    }
+
+
+}
