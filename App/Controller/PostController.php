@@ -14,11 +14,9 @@ class PostController{
         $result['titulo'] = $resultado->titulo;
         $result['conteudo'] = $resultado->conteudo;
 
-
         //echo $template->render($resultado);
         echo $template->render($result);
 
-        
     }
 
 }
