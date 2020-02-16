@@ -1,0 +1,30 @@
+<section>
+    <p><a href="?pagina=admin&metodo=create">Adicionar Post</a></p>
+    <hr>
+    <br>
+    <p>Postagens:</p>
+    <br>
+    <hr>
+    
+    <table border="2">
+    <tr>
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Conteudo</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+    </tr>
+    {% for postagem in postagens %}
+    <tr>
+        <th>{{postagem.id}}</th>
+        <th>{{postagem.titulo}}</th>
+        <th>{{postagem.conteudo}}</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+    </tr>
+    {% endfor %}
+
+
+    </table>
+
+</section>

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-class HomeController{
+class HomeController{ 
     public function index(){
         //Seleciona todas postagens
         $postagens = \App\Model\Postagem::selecionaTodos();
