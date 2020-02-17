@@ -60,7 +60,28 @@ class Postagem{
         return false;
         }
         return true;
-    
+    }
+
+    public static function altera($urlPost){
+        if(empty($urlPost['titulo']) OR empty($urlPost['conteudo'])){
+            throw new Exception("Preencha todos os campos");
+            return false;
+        }
+        //Conexao com o DB
+        $con = \App\lib\Database\Connection::getCon();
+        //Acao
+        $query = "UPDATE postagem SET titulo=?,conteudo=? WHERE id=?";
+        $sql = $con->prepare($query);
+        $sql->bindValue(1,$urlPost['titulo']);
+        $sql->bindValue(2,$urlPost['conteudo']);
+        $sql->bindValue(3,$urlPost['id']);
+        $result = $sql->execute();
+
+        if($result == 0){
+        throw new Exception("Erro ao modificar");
+        return false;
+        }
+        return true;
     }
 
 }

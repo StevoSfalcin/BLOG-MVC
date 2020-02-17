@@ -1,0 +1,12 @@
+<section style="text-align: center;">
+    <form method="POST" action="?pagina=admin&metodo=modifica">
+        <span>TITULO</span><br>
+        <input class="text" name="titulo" value="{{titulo}}"><br>
+        <span>Conteudo</span><br>
+        <textarea name="conteudo" rows="6" cols="20">{{conteudo}}</textarea><br><br>
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="submit" value="cadastrar">
+    </form>
+    <br>
+    <p><a href="http://portfolio/MVC/?pagina=admin&metodo=index">VOLTAR</a></p>
+</section>

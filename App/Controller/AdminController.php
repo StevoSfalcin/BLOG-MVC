@@ -44,4 +44,33 @@ class AdminController{
 
     }
 
+    public function alterar($id){
+        //Resultados do Model Postagem
+        $postagem = \App\Model\Postagem::selecionaPorId($id);
+        //Twig
+        $loader = new \Twig\Loader\FilesystemLoader('App/View');
+        $twig = new \Twig\Environment($loader);
+        $template = $twig->load('alterar.html');
+
+        $resultado = array();
+        $resultado['titulo'] = $postagem->titulo;
+        $resultado['conteudo'] = $postagem->conteudo;
+        $resultado['id'] = $postagem->id;
+
+        echo $template->render($resultado);
+    }
+
+    public function modifica(){
+        try{
+            \App\Model\Postagem::altera($_POST);
+            echo '<script>alert("Publicacao modificada com sucesso");</script>';
+            echo '<script>location.href="http://portfolio/MVC/?pagina=admin&metodo=index";</script>';
+        }catch(Exception $e){
+            echo '<script>alert("'.$e->getMessage().'");</script>';
+            echo '<script>location.href="http://portfolio/MVC/?pagina=admin&metodo=create";</script>';
+
+        }
+
+    }
+
 }

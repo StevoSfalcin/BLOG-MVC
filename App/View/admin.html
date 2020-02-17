@@ -19,8 +19,8 @@
         <th>{{postagem.id}}</th>
         <th>{{postagem.titulo}}</th>
         <th>{{postagem.conteudo}}</th>
-        <th>Editar</th>
-        <th>Deletar</th>
+        <th><a href="http://portfolio/MVC/?pagina=admin&metodo=alterar&id={{postagem.id}}">Alteracao</a></th>
+        <th><a href="http://portfolio/MVC/?pagina=admin&metodo=delete&id={{postagem.id}}">Deleçao</a></th>
     </tr>
     {% endfor %}
 
